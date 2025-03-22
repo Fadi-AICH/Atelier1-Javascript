@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question4</title>
+</head>
+<body>
+    <script>
+//-------------------------------------------( 4 )-------------------------------------------------------------------------------     
+    // Operations sur les matrices (Addition-sous-prd-matricielle-prd element par element...)
+//------------------------------------------------------------------------------------------------------------------------------     
+    alert("Operations sur deux matrices carres.");
+    
+    console.log("-> Somme : ");
+    console.log(SommeMatricesCarre([[1,2,3],[1,2,3],[1,2,3]],[[1,2,3],[1,2,3],[1,2,3]]));
+    
+    console.log("-> Soustraction : ");
+    console.log(SoustractionMatricesCarre([[1,2,3],[1,2,3],[1,2,3]],[[1,2,3],[1,2,3],[1,2,3]]));
+    
+    console.log("-> Multiplication Element Par Element : ");
+    console.log(MultiplicationElementParElement([[1,2,3],[1,2,3],[1,2,3]],[[1,2,3],[1,2,3],[1,2,3]]));
+    
+    console.log("-> MultiplicationClassique : ");
+    console.log(MultiplicationClassique([[1,2],[3,4]],[[1,2],[3,4]]));
+    
+    console.log("-> TransposeMatrice : ");
+    console.log(TransposeMatrice([[1,2,3],[1,2,3],[1,2,3]],[[1,2,3],[1,2,3],[1,2,3]]));
+    
+    function TransposeMatrice(Matrice){
+        for(let i = 0;i<Matrice.length;i++){
+            for(let j = i+1 ;j<Matrice.length;j++){
+                let temp = Matrice[i][j];
+                Matrice[i][j] = Matrice[j][i];
+                Matrice[j][i] = temp;
+            }
+        }
+        return Matrice;
+    }
+
+    function MultiplicationClassique(matrice1,matrice2){
+        let Matrice = [];
+        for(let i=0;i<matrice1.length;i++){
+            let Matriceligne = [];
+            for(let j=0;j<matrice1.length;j++){
+                let Somme = 0;
+                for(let k=0;k<matrice1.length;k++){
+                    Somme += matrice1[i][k] * matrice2[k][j];
+                }
+                Matriceligne.push(Somme);
+            }
+            Matrice.push(Matriceligne);
+        }
+        return Matrice;
+    }
+
+    function MultiplicationElementParElement(matrice1,matrice2){
+        let Matrice = [];
+        for(let i=0;i<matrice1.length;i++){
+            let Matriceligne = [];
+            for(let j=0;j<matrice1.length;j++){
+                Matriceligne.push(matrice1[i][j]*matrice2[i][j]);
+            }
+            Matrice.push(Matriceligne);
+        }
+        return Matrice;
+    }
+
+    function SoustractionMatricesCarre(matrice1,matrice2){
+        let Matrice = [];
+        for(let i=0;i<matrice1.length;i++){
+            let Matriceligne = [];
+            for(let j=0;j<matrice1.length;j++){
+                Matriceligne.push(matrice1[i][j]-matrice2[i][j]);
+            }
+            Matrice.push(Matriceligne);
+        }
+        return Matrice;
+    }
+
+    function SommeMatricesCarre(matrice1 , matrice2){
+        let Matrice = [];
+        for(let i=0;i<matrice1.length;i++){
+            let Matriceligne = [];
+            for(let j=0;j<matrice1.length;j++){
+                Matriceligne.push(matrice1[i][j]+matrice2[i][j]);
+            }
+            Matrice.push(Matriceligne);
+        }
+        return Matrice;
+    }
+    </script>
+</body>
+</html>

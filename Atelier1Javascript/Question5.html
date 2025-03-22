@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question5</title>
+</head>
+<body>
+   <script>
+//-------------------------------------------( 5 )-------------------------------------------------------------------------------     
+    // Convertion : Nombre Decimal -> Nombre Binaire
+    // -> Methode recursive
+//-------------------------------------------------------------------------------------------------------------------------------     
+    let resultat1,resultat2;
+
+    console.log("-> Conversion Decimal -> Binaire (Methode Iterative)");
+    console.log( resultat1 = ConvertionDecimalBinaireIterative(Number(window.prompt("Entrez Une valeur (Iterative)"))));
+
+    console.log("-> Conversion Decimal -> Binaire (Methode Recursive)");
+    console.log( resultat2 = ConvertionDecimalBinaireRecursive(Number(window.prompt("Entrez Une valeur (Recurcive)"))));
+
+    alert("@ Conversion Decimal -> Binaire");
+    alert("Methode Iterative : "+resultat1);
+    alert("Methode Recursive : "+resultat2);
+
+function ConvertionDecimalBinaireRecursive(Nombre,puissance=1){
+        if(Nombre===0) return 0;
+return Nombre%2 * puissance + ConvertionDecimalBinaireRecursive(Math.trunc(Nombre/2),puissance*10);
+}
+function ConvertionDecimalBinaireIterative(Nombre){
+    if(Nombre === 0) return 0;
+        let Resultat =  0;
+        let puissance = 1;
+        while(Nombre!=0){     
+            let reste = Nombre%2;
+            Nombre=Math.trunc(Nombre/2);
+            Resultat = Resultat + reste*puissance;
+            puissance = puissance*10;
+        }
+    return Resultat;
+}
+   </script> 
+</body>
+</html>

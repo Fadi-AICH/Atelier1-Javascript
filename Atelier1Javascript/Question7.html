@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question7</title>
+</head>
+<body>
+    <center>
+<!--//-------------------------------------------( 7 )-------------------------------------------------------------------------------     
+        // Validation des champs d'un site e-commerce
+//---------------------------------------------------------------------------------------------------------------------------------> 
+    <table border="1">
+        <tr>
+            <td><label >-> Nom : </label></td>
+            <td><input type="text"  id="Nom" name="" required></td>
+        </tr>
+        <tr>
+            <td><label >-> Prénom : </label></td>
+            <td><input type="text"  id="Prenom" name="" required></td>
+        </tr>
+        <tr>
+            <td><label >-> Adresse : </label></td>
+            <td><input type="text"  id="Adresse" name="" required></td>
+        </tr>
+        <tr>
+            <td><label >-> Email : </label></td>
+            <td><input type="email"  id="Email" name="" required></td>
+        </tr>
+        <tr>
+            <td><label >-> Login : </label></td>
+            <td><input type="text"  id="Login" name="" required></td>  
+        </tr>
+        <tr>
+            <td><label >-> Mot De Passe : </label></td>
+            <td><input type="text"  id="MDP" name="" required></td>
+        </tr>
+        <tr>
+            <td><label >-> Confirmer Votre MDP : </label></td>
+            <td><input type="text"  id="CMDP" name="" required></td>
+        </tr>
+        <tr>
+            <td><label >-> Téléphone : </label></td>
+            <td><input type="number"  id="Telephone" name="" required></td>
+        </tr>
+        <tr>
+            <td><label >->Civilité : </label></td>
+            <td><input type="text"  id="Civilite" name="" required></td>
+        </tr>
+        <tr>
+            <td><label >->Pays : </label></td>
+            <td><input type="text"  id="Pays" name="" required></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><input type="submit" id="submit" value="Valider" onclick="Validation()"></td>
+        </tr>
+    </table>
+    <div id="Affichage">
+        
+    </div>
+    
+    </center>
+    <script>
+        const Affichage = document.getElementById("Affichage");
+        const Nom = document.getElementById("Nom");
+        const Prenom = document.getElementById("Prenom");
+        const Adresse = document.getElementById("Adresse");
+        const Email = document.getElementById("Email");
+        const Login = document.getElementById("Login");
+        const MDP =document.getElementById("MDP");
+        const CMDP = document.getElementById("CMDP");
+        const Telephone = document.getElementById("Telephone");
+        const Civilite = document.getElementById("Civilite");
+        const Pays = document.getElementById("Pays");
+
+       
+    function Validation(){
+        
+        // Supposons ces Expressions regulieres   
+        const ExpRegEmail = /^[A-Za-z0-9]+@[A-Za-z0-9]+\.(com|fr|net|org|io)$/;
+        const ExpRegTelephone = /^0(6|7|5)[0-9]{8}$/;
+        Affichage.innerHTML = "<h1>État Validation :</h1>";
+
+    if(!Nom.value.length||!Prenom.value.length||!Adresse.value.length||!Login.value.length||!Civilite.value.length||!Pays.value.length||!MDP.value.length||!CMDP.value.length)
+           Affichage.innerHTML ="<h1>Un ou plusieurs champs vides  !!!!</h1>";  
+   
+   if(!ExpRegEmail.test(Email.value)){
+        Affichage.innerHTML += "<h1>! Email est mal ecrit !</h1>";
+    }
+    if(MDP.value!==CMDP.value){
+        Affichage.innerHTML += "<h1>! Mot de passe n'est est mal comfirmer !</h1>";
+    }
+    if(!ExpRegTelephone.test(Telephone.value)){
+        Affichage.innerHTML += "<h1>! Numéro Non Valide !</h1>";
+    }
+    if(Affichage.textContent === "État Validation :")
+        Affichage.innerHTML += "<h1> Valide (-_-)</h1>";
+}
+    </script>
+</body>
+</html>

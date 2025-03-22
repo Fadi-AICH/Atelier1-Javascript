@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2</title>
+</head>
+<body>
+    <script>
+//-------------------------------------------( 2 )-------------------------------------------------------------------------------     
+        //   PGCD de deux entier
+//-------------------------------------------------------------------------------------------------------------------------------     
+    let array=[];
+        for(let i=1;i<3;i++)
+             array[i-1] = window.prompt(` Entrez la valeur ${i} : `);
+        
+    console.log("Resultat par algorithme d'euclide : ");
+    console.log(PGCD1(Number(array[1]),Number(array[0])));
+    alert("Resultat par algorithme d'euclide : "+PGCD1(Number(array[1]),Number(array[0])));
+    
+    console.log("Resultat par algorithme de % (plus optimale) : ");
+    alert("Resultat par algorithme de % (plus optimale) :"+PGCD2(Number(array[0]),Number(array[1])));
+    console.log(PGCD2(Number(array[0]),Number(array[1])));
+
+    // PGCD -> 1'er methode d'euclide 
+            function PGCD1(a,b){
+                while(a !== b){
+                    if(a>b) a = a-b;
+                    else b = b - a;
+                }
+                return a;
+            }
+            
+    // PGCD -> 2 eme methode (%) plus optimale
+            function PGCD2(a,b){
+                //let max = Math.max(a,b);
+                //b = (a + b) - max;
+                //a = max;
+                while(b!=0){
+                let help = b;
+                    b = a%b;
+                    a = help;
+                }
+                return a;
+            }
+
+    </script>
+</body>
+</html>

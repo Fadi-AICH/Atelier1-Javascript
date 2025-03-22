@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question6</title>
+</head>
+<body>
+<!--//-------------------------------------------( 6 )-------------------------------------------------------------------------------     
+// -> Application Web « +,-,/,* » 
+//--------------------------------------------------------------------------------------------------------------------------------->
+    <center>
+        
+        <input type="text" id="Champ1" value="0">
+        <input type="text" id="Champ2" value="0">
+        <br><br>
+        <label>+</label>
+        <input type="radio" id="+" name="buttons">
+        <label>-</label>
+        <input type="radio" id="-" name="buttons">
+        <label>/</label>
+        <input type="radio" id="/" name="buttons">
+        <label>*</label>
+        <input type="radio" id="*" name="buttons">
+        <br>
+        <div id="Affichage">
+            <h1>Resultat : 0</h1>
+        </div>
+    </center>
+    <script>
+
+    const Champ1 = document.getElementById("Champ1");
+    const Champ2 = document.getElementById("Champ2");
+    const CheckBtns  = document.querySelectorAll('[name="buttons"]');
+    const DivAffichage = document.getElementById("Affichage");
+
+    CheckBtns.forEach((Button)=>{
+        Button.addEventListener('change',()=>{
+    switch(Button.id){
+        case "+" : DivAffichage.innerHTML = " <h1>Resultat : "+(Number(Champ1.value)+Number(Champ2.value))+"</h1>" ; 
+                        break;
+        case "-" :DivAffichage.innerHTML = " <h1>Resultat : "+(Number(Champ1.value)-Number(Champ2.value))+"</h1>" ; 
+                        break;
+        case "*" :DivAffichage.innerHTML = " <h1>Resultat : "+(Number(Champ1.value)*Number(Champ2.value))+"</h1>";
+                        break;
+        case "/" :DivAffichage.innerHTML = " <h1>Resultat : "+((Number(Champ2.value) === 0 )? "Impossible de diviser par 0 " : Number(Champ1.value)/Number(Champ2.value))+"</h1>";
+                        break;                        
+    }
+     });
+    });
+    </script>
+</body>
+</html>

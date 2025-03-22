@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question8</title>
+</head>
+<body>
+<!--//-------------------------------------------( 8 )-------------------------------------------------------------------------------     
+        // création d'un carrousel 
+//--------------------------------------------------------------------------------------------------------------------------------->
+    <center>
+        <button onclick="Basculer('R')">Right</button>
+        <img src="" width="300" height="200" alt="Image" id="Cadre">
+        <button onclick="Basculer('L')">Left</button>
+    </center>
+    <script>
+ const Images = ["1.jpg","2.jpg","3.jpg"];
+        const Cadre = document.getElementById("Cadre");
+        let ImageActuelle = 0;
+        Cadre.src = Images[ImageActuelle];
+    function Basculer(Sens){
+        console.log(ImageActuelle);
+        switch(Sens){
+            case "R":
+                ImageActuelle = (ImageActuelle + 1)%Images.length;
+                break;
+            
+            case "L":
+                ImageActuelle = (ImageActuelle - 1 + Images.length)%Images.length;
+            
+            ImageActuelle = (ImageActuelle == -1 ?Images.length-1:ImageActuelle);    
+            break;
+        }
+        Cadre.src = Images[ImageActuelle];
+    }
+    </script>
+</body>
+</html>

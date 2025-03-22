@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 3</title>
+</head>
+<body>
+    <script>
+//-------------------------------------------( 3 )-------------------------------------------------------------------------------     
+    // Calcule Somme des chiffres dans un entier donne
+//-------------------------------------------------------------------------------------------------------------------------------     
+    let valeur = window.prompt(` Entrez une valeur : `);
+        console.log(`-> Somme des chiffres de ${valeur} : `+CalucleSommeChiffres(Number(valeur)));
+        alert(`-> Somme des chiffres de ${valeur} : `+CalucleSommeChiffres(Number(valeur)));
+    
+    function CalucleSommeChiffres(valeur){
+        let somme = 0;
+        while(valeur != 0){
+           somme += valeur%10;
+           valeur = Math.trunc(valeur/10); // Pour trancher les chiffres apres virgule      
+        }
+        return somme;
+    }
+    </script>
+</body>
+</html>
