@@ -1,4 +1,3 @@
-```markdown
 # 🚀 Atelier JS — Initiation à JavaScript avec Style
 
 ![Banner](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=Atelier%20JS&fontSize=40&fontAlign=center)
@@ -11,7 +10,7 @@ Bienvenue dans ce mini-atelier JavaScript 🔥 conçu pour apprendre, expérimen
 
 🎯 Ce dépôt contient des exercices pratiques et des scripts éducatifs pour apprendre les bases de JavaScript de manière concrète.
 
-🧠 Pensé pour les débutants ambitieux et les étudiants en cybersécurité (comme moi 😎) qui veulent maîtriser la logique derrière les scripts, DOM, événements, boucles, fonctions et bien plus.
+🧠 Pensé pour les débutants ambitieux qui veulent maîtriser la logique derrière les scripts, DOM, événements, boucles, fonctions et bien plus.
 
 ---
 
@@ -42,9 +41,6 @@ cd atelier-js
 npm install
 npm run dev
 ```
-
-> Ou simplement ouvre `index.html` dans ton navigateur 🚀
-
 ---
 
 ## 📘 Aperçu des Exercices
@@ -123,11 +119,14 @@ document.querySelector("#hackButton").addEventListener("click", () => {
 ## ✍️ Auteur
 
 **👤 Fadi AICH**  
-🎓 Étudiant ingénieur en cybersécurité | 🧠 Passionné d’ethical hacking et de JavaScript  
-🔗 [GitHub](https://github.com/Fadi-AICH) | [LinkedIn](https://linkedin.com/in/fadi-aich)
+🎓 Étudiant ingénieur en cybersécurité | 🧠 Passionné d’ethical hacking 
+🔗 [GitHub](https://github.com/Fadi-AICH) 
 
 ---
 
 ## ✨ Citation Dev du jour
 
 ![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
+```
+
+
